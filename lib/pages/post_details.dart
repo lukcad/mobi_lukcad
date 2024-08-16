@@ -7,6 +7,7 @@ import 'package:http/http.dart' as http;
 import 'interfaces/post.dart';
 import '../menues/vmenu.dart';
 import '../menues/hmenu.dart';
+import '../menues/mainbar.dart';
 
 // data extractor from remote API abdout Posts
 Future<Posts> fetchPostDetails(String id) async {
@@ -36,10 +37,7 @@ class _PostDetailsPageState extends State<PostDetailsPage> {
 
     return Scaffold(
       drawer: const Vmenu(),
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
+      appBar: Mainbar(title: widget.title),
       body: Center(
         child: FutureBuilder<Posts>(
           future: fetchPostDetails(args['id'].toString()),

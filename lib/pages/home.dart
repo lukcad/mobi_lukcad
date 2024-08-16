@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../menues/vmenu.dart';
+import '../menues/mainbar.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key, required this.title});
@@ -26,10 +27,7 @@ class MyHomePage extends StatelessWidget {
 
     return Scaffold(
       drawer: const Vmenu(),
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(this.title),
-      ),
+      appBar: Mainbar(title: title),
       body: Center(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
